@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Late4dTrain.Functional</RootNamespace>
+    <TargetFrameworks>net6.0;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <LangVersion>10</LangVersion>
+  </PropertyGroup>
+
+</Project>
