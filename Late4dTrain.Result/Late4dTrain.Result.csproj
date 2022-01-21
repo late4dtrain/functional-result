@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Late4dTrain</RootNamespace>
+    <TargetFrameworks>net6.0;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <LangVersion>10</LangVersion>
+    <Authors>Gab Soulavy</Authors>
+    <Description>Simple generic result object in order to replace exceptions changing program flow</Description>
+    <Copyright>MIT</Copyright>
+    <PackageProjectUrl>https://github.com/late4dtrain/result</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/late4dtrain/result</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>result object</PackageTags>
+    <PackageId>Late4dTrain.Result</PackageId>
+    <Version>0.0.1</Version>
+    <AssemblyVersion>0.0.1</AssemblyVersion>
+    <FileVersion>0.0.1</FileVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+</Project>
