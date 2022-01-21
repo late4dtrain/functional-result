@@ -6,6 +6,8 @@ using FluentAssertions;
 
 using Xunit;
 
+using static Late4dTrain.Result<string>;
+
 public class OnFailTests
 {
     [Fact]
@@ -15,7 +17,7 @@ public class OnFailTests
         var failCalled = false;
         var capturedError = string.Empty;
 
-        var result = Result<string>.Fail<int>("It went wrong...");
+        var result = Fail<int>("It went wrong...");
         var func = () => result.Value;
 
         result
@@ -41,7 +43,7 @@ public class OnFailTests
         var failCalled = false;
         var capturedError = string.Empty;
 
-        var result = Result<string>.Fail("It went wrong...");
+        var result = Fail("It went wrong...");
 
         result
             .OnSuccess(() => successCalled = true)
