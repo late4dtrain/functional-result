@@ -17,7 +17,7 @@ public class OnSuccessTests
         var failCalled = false;
         var capturedResult = 0;
 
-        var result = Ok(42);
+        var result = Ok(42); // Creating the result object with value
         var func = () => result.Error;
 
         result
@@ -42,7 +42,7 @@ public class OnSuccessTests
         var successCalled = false;
         var failCalled = false;
 
-        var result = Ok();
+        var result = Ok(); // Creating the result object without value
         var func = () => result.Error;
 
         result

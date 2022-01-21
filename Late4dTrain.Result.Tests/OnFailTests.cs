@@ -17,7 +17,7 @@ public class OnFailTests
         var failCalled = false;
         var capturedError = string.Empty;
 
-        var result = Fail<int>("It went wrong...");
+        var result = Fail<int>("It went wrong..."); // Creating the failed result object without value (Result<Error, Value>)
         var func = () => result.Value;
 
         result
@@ -43,7 +43,7 @@ public class OnFailTests
         var failCalled = false;
         var capturedError = string.Empty;
 
-        var result = Fail("It went wrong...");
+        var result = Fail("It went wrong..."); // Creating the failed result object without value
 
         result
             .OnSuccess(() => successCalled = true)
