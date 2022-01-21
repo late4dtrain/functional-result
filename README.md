@@ -1,4 +1,4 @@
-# Late4dTrain.Functional.Result
+# Late4dTrain.Result
 
 [![.NET](https://github.com/late4dtrain/result/actions/workflows/ci.yml/badge.svg)](https://github.com/late4dtrain/result/actions/workflows/ci.yml)
 [![Release to Nuget](https://github.com/late4dtrain/result/actions/workflows/release.yml/badge.svg)](https://github.com/late4dtrain/result/actions/workflows/release.yml)
