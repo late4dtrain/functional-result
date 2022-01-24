@@ -36,6 +36,14 @@ public class Result<TError>
         return this;
     }
 
+    public Result<TError> OnFailure(Action action)
+    {
+        if (!IsSuccess)
+            action();
+
+        return this;
+    }
+
     public Result<TError> OnFailure(Action<TError> action)
     {
         if (!IsSuccess)
