@@ -60,4 +60,26 @@ public class OnFailTests
         capturedError.Should().Be("It went wrong...");
     }
 
+    [Fact]
+    public void OnFailHandlingWithoutParam()
+    {
+
+        var successCalled = false;
+        var failCalled = false;
+
+        var result = Fail("It went wrong..."); // Creating the failed result object without value
+
+        result
+            .OnSuccess(() => successCalled = true)
+            .OnFailure(() =>
+                {
+                    failCalled = true;
+                }
+            );
+
+        successCalled.Should().BeFalse();
+        failCalled.Should().BeTrue();
+        result.Error.Should().Be("It went wrong...");
+    }
+
 }
