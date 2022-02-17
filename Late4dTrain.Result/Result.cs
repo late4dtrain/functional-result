@@ -22,11 +22,11 @@ public class Result<TError>
 
     public static Result<TError> Fail(TError error) => new(false, error);
 
-    public static Result<T, TError> Fail<T>(TError error) => new(default, false, error);
+    public static Result<TError, TValue> Fail<TValue>(TError error) => new(default, false, error);
 
     public static Result<TError> Ok() => new(true, default);
 
-    public static Result<T, TError> Ok<T>(T value) => new(value, true, default);
+    public static Result<TError, TValue> Ok<TValue>(TValue value) => new(value, true, default);
 
     public Result<TError> OnSuccess(Action action)
     {
@@ -53,17 +53,17 @@ public class Result<TError>
     }
 }
 
-public class Result<TValue, TError> : Result<TError>
+public sealed class Result<TError, TValue> : Result<TError>
 {
     private readonly TValue? _value;
 
-    public Result(TValue? value, bool isSuccess, TError? error)
+    internal Result(TValue? value, bool isSuccess, TError? error)
         : base(isSuccess, error) =>
         _value = value;
 
     public TValue Value => !IsSuccess ? throw new InvalidOperationException(): _value!;
 
-    public Result<TValue, TError> OnSuccess(Action<TValue> action)
+    public Result<TError, TValue> OnSuccess(Action<TValue> action)
     {
         if (IsSuccess)
             action(_value!);

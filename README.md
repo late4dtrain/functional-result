@@ -60,11 +60,11 @@ void Main()
 
 public Result<Error> GetOk() => Ok();
 
-public Result<int, Error> GetOkWithData() => Ok(42);
+public Result<Error, int> GetOkWithData() => Ok(42);
 
 public Result<Error> GetFailed() => Fail(new Error("Very bad!"));
 	
-public Result<int, Error> GetFailedWithData() => Fail<int>(new Error("Failed, though I was expecting a value"));	
+public Result<Error, int> GetFailedWithData() => Fail<int>(new Error("Failed, though I was expecting a value"));	
 
 
 // Handlers

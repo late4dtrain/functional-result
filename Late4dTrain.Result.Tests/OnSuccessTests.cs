@@ -6,7 +6,7 @@ using FluentAssertions;
 
 using Xunit;
 
-using static Late4dTrain.Result<string>;
+using static Result<string>;
 
 public class OnSuccessTests
 {
