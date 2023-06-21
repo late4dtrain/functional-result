@@ -364,6 +364,7 @@ dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggest
 file_header_template = # ReSharper properties
 
 
+
 resharper_alignment_tab_fill_style = use_spaces
 resharper_align_first_arg_by_paren = false
 resharper_align_linq_query = false

@@ -6,7 +6,7 @@ using FluentAssertions;
 
 using Xunit;
 
-using static Late4dTrain.Result<string>;
+using static Result<string>;
 
 public class OnFailTests
 {
@@ -17,12 +17,15 @@ public class OnFailTests
         var failCalled = false;
         var capturedError = string.Empty;
 
-        var result = Fail<int>("It went wrong..."); // Creating the failed result object without value (Result<Error, Value>)
+        var result =
+            Fail<int>("It went wrong..."); // Creating the failed result object without value (Result<Error, Value>)
+
         var func = () => result.Value;
 
         result
-            .OnSuccess((i) => successCalled = true)
-            .OnFailure((e) =>
+            .OnSuccess(i => successCalled = true)
+            .OnFail(
+                e =>
                 {
                     failCalled = true;
                     capturedError = e;
@@ -47,7 +50,8 @@ public class OnFailTests
 
         result
             .OnSuccess(() => successCalled = true)
-            .OnFailure((e) =>
+            .OnFail(
+                e =>
                 {
                     failCalled = true;
                     capturedError = e;
@@ -63,7 +67,6 @@ public class OnFailTests
     [Fact]
     public void OnFailHandlingWithoutParam()
     {
-
         var successCalled = false;
         var failCalled = false;
 
@@ -71,15 +74,12 @@ public class OnFailTests
 
         result
             .OnSuccess(() => successCalled = true)
-            .OnFailure(() =>
-                {
-                    failCalled = true;
-                }
+            .OnFail(
+                () => { failCalled = true; }
             );
 
         successCalled.Should().BeFalse();
         failCalled.Should().BeTrue();
         result.Error.Should().Be("It went wrong...");
     }
-
 }
