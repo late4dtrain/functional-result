@@ -1,10 +1,8 @@
-# Late4dTrain.Result
+# Late4dTrain.Result C# Library
 
 [![.NET](https://github.com/late4dtrain/result/actions/workflows/ci.yml/badge.svg)](https://github.com/late4dtrain/result/actions/workflows/ci.yml)
 [![Release to Nuget](https://github.com/late4dtrain/result/actions/workflows/release.yml/badge.svg)](https://github.com/late4dtrain/result/actions/workflows/release.yml)
 [![NuGet version (GSoulavy.Csv.Net)](https://img.shields.io/nuget/v/Late4dTrain.Result.svg?style=flat-square)](https://www.nuget.org/packages/Late4dTrain.Result/)
-
-# Late4dTrain C# Library
 
 This repository contains a flexible and type-safe C# library for result-oriented error handling, which promotes clearer and more reliable code. The library is especially useful in environments where exceptions are costly or unwanted, such as in high-performance or concurrent systems.
 
